@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Hero from '../Hero';
 const UserList = () => {
 	const [users, setUsers] = useState([]);
 	const [isLoading, setIsLoading] = useState(false);
@@ -26,32 +27,35 @@ const UserList = () => {
 	if (error) return <p>error message</p>;
 
 	return (
-		<div className='user--cards'>
-			{users &&
-				users.map((user) => {
-					return (
-						<div className='user--card'>
-							<div className='card-img list'>
-								<img src='https://source.unsplash.com/200x100/?portrait' alt='' />
-							</div>
-							<div key={user.id} user={user}>
-								<h2>
-									<span>Name:</span> {user.name}
-								</h2>
+		<div>
+			<Hero />
+			<div className='user--cards'>
+				{users &&
+					users.map((user) => {
+						return (
+							<div className='user--card'>
+								<div className='card-img list'>
+									<img src='https://source.unsplash.com/200x100/?portrait' alt='' />
+								</div>
+								<div key={user.id} user={user}>
+									<h2>
+										<span>Name:</span> {user.name}
+									</h2>
 
-								<p>
-									<span>Email:</span> {user.email}
-								</p>
-								<p>
-									<span>Phone Number:</span> {user.phone}
-								</p>
+									<p>
+										<span>Email:</span> {user.email}
+									</p>
+									<p>
+										<span>Phone Number:</span> {user.phone}
+									</p>
+								</div>
+								<Link to={`/UserPage/${user.id}`} className='btn--card'>
+									More Info
+								</Link>
 							</div>
-							<Link to={`/UserPage/${user.id}`} className='btn--card'>
-								More Info
-							</Link>
-						</div>
-					);
-				})}
+						);
+					})}
+			</div>
 		</div>
 	);
 };
