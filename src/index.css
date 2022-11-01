@@ -81,7 +81,7 @@ body {
 	width: 80%;
 	max-width: 1020px;
 	margin: 0 auto;
-	text-align: center;
+	text-align: start;
 	display: flex;
 	flex-direction: column;
 }
