@@ -1,0 +1,108 @@
+.error {
+	color: red;
+}
+
+.loading {
+	margin: auto;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: bold;
+	font-size: 30px;
+}
+body {
+	background: #cccccc;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.user--cards {
+	width: 100%;
+	margin: 0 auto;
+	max-width: 1400px;
+	display: grid;
+	grid-template-columns: repeat(1fr);
+	gap: 20px;
+}
+
+.user--card {
+	background: #ffffff;
+	border-radius: 10px;
+	padding: 20px 25px;
+	text-align: start;
+}
+.user--card.page {
+	width: 80%;
+	max-width: 1020px;
+	margin: 0 auto;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.user--card span {
+	font-size: 16px;
+	font-weight: 100;
+}
+.card-img,
+.card-img.list {
+	width: 100%;
+}
+.card-img img {
+	width: 100%;
+	height: 100%;
+}
+
+.btn--card {
+	background: green;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px;
+	border-radius: 10px;
+	text-decoration: none;
+	color: #ffffff;
+	border: 0;
+}
+.btn--card.back {
+	background-color: red;
+	margin-top: 30px;
+}
+.userPageCard {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+.userPageHead {
+	font-size: 30px;
+	font-weight: 600;
+}
+@media screen and (min-width: 768px) {
+	.user--cards {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.user--card.page {
+		text-align: start;
+		display: flex;
+		flex-direction: row;
+	}
+	.card-img {
+		width: 50%;
+	}
+	.userPageContent {
+		padding-left: 20px;
+	}
+}
+
+@media screen and (min-width: 991px) {
+	.user--cards {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.user--cards {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
