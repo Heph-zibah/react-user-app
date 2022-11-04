@@ -5,7 +5,7 @@
 }
 
 body {
-	background: #cccccc;
+	background: #ffffff;
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .error {
@@ -26,12 +26,12 @@ body {
 	position: relative;
 	background: black;
 	width: 100%;
-	height: 100vh;
+	height: 80vh;
 	color: white;
 }
 .hero-container::before {
 	width: 100%;
-	height: 100vh;
+	height: 80vh;
 	content: '';
 	background-color: #000;
 	background-image: url('../src/Assets/hero.png');
@@ -50,7 +50,7 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 100vh;
+	height: 80vh;
 	z-index: 100;
 }
 
@@ -63,8 +63,8 @@ body {
 /* USER LIST COMPONENT */
 .user--cards {
 	width: 100%;
+	max-width: 1024px;
 	margin: 0 auto;
-	max-width: 1400px;
 	display: grid;
 	grid-template-columns: repeat(1fr);
 	gap: 20px;
@@ -72,10 +72,16 @@ body {
 }
 
 .user--card {
-	background: #ffffff;
+	background: #f9f9f9;
+	width: 18rem;
 	border-radius: 10px;
 	padding: 20px 25px;
 	text-align: start;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.3);
+	text-decoration: none;
+	color: #333;
 }
 .user--card.page {
 	width: 80%;
@@ -87,18 +93,33 @@ body {
 }
 
 .user--card span {
-	font-size: 16px;
+	font-size: 12px;
 	font-weight: 100;
 }
-.card-img,
-.card-img.list {
+.card-img {
 	width: 100%;
+	height: 500%;
 }
 .card-img img {
 	width: 100%;
 	height: 100%;
+	object-fit: cover;
 }
-
+.userContent {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin: 20px 0;
+}
+.userContent h2 {
+	font-size: 20px;
+}
+.userContent p {
+	font-size: 14px;
+	font-weight: 500;
+	border-top: 1px dotted #ccc;
+	padding-top: 5px;
+}
 .btn--card {
 	background: green;
 	display: flex;
@@ -109,6 +130,14 @@ body {
 	text-decoration: none;
 	color: #ffffff;
 	border: 0;
+	font-weight: bold;
+	cursor: pointer;
+}
+.btn--card:hover {
+	color: green;
+	background: #ffffff;
+	font-weight: bold;
+	border: 1px solid #ccc;
 }
 .btn--card.back {
 	background-color: red;
@@ -139,7 +168,7 @@ body {
 		flex-direction: row;
 	}
 	.card-img {
-		width: 50%;
+		width: 100%;
 	}
 	.userPageContent {
 		padding-left: 20px;
@@ -154,12 +183,12 @@ body {
 
 @media screen and (min-width: 991px) {
 	.user--cards {
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(2, 1fr);
 	}
 }
 
 @media screen and (min-width: 1200px) {
 	.user--cards {
-		grid-template-columns: repeat(4, 1fr);
+		grid-template-columns: repeat(3, 1fr);
 	}
 }
